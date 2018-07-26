@@ -39,7 +39,8 @@ ROM types:
   aokp
   slim
   aex
-
+  cos
+  
 Variants are dash-joined combinations of (in order):
 * processor type
   * "arm" for ARM 32 bit
@@ -145,8 +146,13 @@ function get_rom_type() {
                 treble_generate="slim"
                 extra_make_options="WITHOUT_CHECK_API=true"
                 ;;
-
-
+            cos)
+	        mainrepo="https://github.com/Cosmic-OS/platform_manifest.git"
+                mainbranch="pulsar-release"
+                localManifestBranch="android-8.1"
+                treble_generate="cos"
+                extra_make_options="WITHOUT_CHECK_API=true"
+                ;;
 
 
         esac
